@@ -12,6 +12,10 @@ import (
 	"os/exec"
 )
 
+/*
+ * Termux API: termux-battery-status
+ */
+
 var Battery struct {
 	Health      string
 	Percentage  int
@@ -41,6 +45,7 @@ func main() {
 	if err := cmd.Wait(); err != nil {
 		log.Fatal(err)
 	}
+
 	fmt.Printf("The battery is %s and is charged in %d percentage\n",
 		Battery.Health, Battery.Percentage)
 }
